@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 export default function Comment(props) {
   const { id, user, numTel, description, created_at } = props.comment;
-
+  const deleteComment = props.deleteComment;
 
   //les fonctions pour sweetalert2
 
@@ -26,20 +26,7 @@ const fireSweetAlert = () => {
           'Deleted!',
           'Your file has been deleted.',
           'success'
-        ).then(async () => {
-            try {
-                await http.delete(`/comments/${id}`)
-          //  await fetch(API_URL+`/comments/`+id, {
-           // headers: {"Content-type": "application/json;charset=UTF-8"},
-           //  method: "DELETE",
-            //body: JSON.stringify(comment)
-            .then(()=>{
-            window.location.reload();
-         })} catch(err) {
-           console.error(err)
-         };
-       
-     }); 
+        ).then(() => {deleteComment(id)})
     };
     });
 };

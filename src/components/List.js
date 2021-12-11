@@ -16,7 +16,7 @@ export default function List(props) {
       ) : null}
 
       {props.comments.map((comment, index) => (
-        <Comment key={index} comment={comment} />
+        <Comment key={index} comment={comment} deleteComment={props.deleteComment}/>
       ))}
     </div>
   );

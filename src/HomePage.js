@@ -49,6 +49,21 @@ class HomePage extends Component {
     });
   }
 
+   //effacer un comment
+   deleteComment(id) {
+    http.delete(`/comments/${id}`)
+    .then(res => {
+      console.log(res);
+      const newcomments = this.state.comments.filter(item => item.id !== id);
+      this.setState({
+        loading: false,
+        comments: newcomments
+      });
+    }).catch(function (error) {
+      console.log(error.toJSON());
+    })
+  }
+
   render() {
 
     <header className="App-header">
@@ -76,6 +91,7 @@ class HomePage extends Component {
             <List
               loading={this.state.loading}
               comments={this.state.comments}
+              deleteComment={this.deleteComment} 
             />
           </div>
         </div>

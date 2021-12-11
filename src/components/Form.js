@@ -24,7 +24,9 @@ export default class Form extends Component {
     this.notify = this.notify.bind(this);
   }
 
-  notify = () => toast("sms bien envoyé");
+  notify = () => toast("sms bien envoyé", {
+    position: "top-center"
+  });
 
   /**
    * Handle form input field changes & update the state
