@@ -1,5 +1,5 @@
 import React from "react";
-import http from "../http";
+
 import Swal from 'sweetalert2';
 
 export default function Comment(props) {
