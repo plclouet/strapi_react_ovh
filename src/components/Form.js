@@ -148,7 +148,7 @@ export default class Form extends Component {
 
           <div className="form-group">
             <button disabled={this.state.loading} className="btn btn-primary">
-              Comment &#10148;
+              Envoi sms &#10148;
             </button>
           </div>
         </form>

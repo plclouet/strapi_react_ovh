@@ -59,7 +59,7 @@ axios
     } 
    
     return(
-        <div className="card col-12 col-lg-4 login-card mt-2 hv-center p-2">
+        <div className="card col-12 col-md-4 login-card mt-2 hv-center p-2">
             <form>
                 <div className="form-group text-left">
                 <label htmlFor="exampleInputEmail1">Email address</label>
