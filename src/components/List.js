@@ -38,8 +38,8 @@ export default function List(props) {
     fireSweetAlert();
   };
 
-
-
+//classement des sms depuis le plus récent au plus ancien
+  const sortedComments = props.comments.sort((a, b) => b.created_at > a.created_at ? 1: -1);
   
 
   return (
@@ -69,8 +69,8 @@ export default function List(props) {
         </div>
       ) : null}
 
-      {props.comments.map((comment, index) => (
-        <Comment key={index} comment={comment} deleteComment={props.deleteComment}
+      {sortedComments.map((sortedComment, index) => (
+        <Comment key={index} comment={sortedComment} deleteComment={props.deleteComment}
         toggleCheckbox={props.toggleCheckbox} toggleAllCheckbox={props.toggleAllCheckbox} 
         selectedArray={selectedArray}/>
       ))}
