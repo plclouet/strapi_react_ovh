@@ -68,21 +68,13 @@ export default class Form extends Component {
         body: JSON.stringify(comment)
     })  */
         http.post("/comments", comment)
-     // .then(res => res.json())
+        .then(res => {this.props.addComment(res.data)})
         .then(this.notify())
         .then(() =>{
-        
-        //this.props.addComment(comment);
-          
-            
           this.setState({
             loading: false,
-            comment: { ...comment, user:"", numTel:"", description: "" }
+            comment: { ...comment, user:"", numTel:"" }
           });
-          setTimeout(window.location.reload.bind(window.location), 3000);
-          
-
-        
       })
       .catch(error => {
           console.log(error);
